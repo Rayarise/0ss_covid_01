@@ -77,7 +77,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Margin="3">
-                    <TextBlock Text="Prénom :" Width="75"/>
+                    <TextBlock Text="Prénom :" Width="15"/>
                     <TextBox MinWidth="125" Text="{Binding SelectedCustomer.Name}"/>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="1" 
