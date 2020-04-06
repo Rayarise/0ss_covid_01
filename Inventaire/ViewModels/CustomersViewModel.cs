@@ -6,6 +6,7 @@ using System.Windows;
 using System.ComponentModel;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
+using System;
 
 namespace BillingManagement.UI.ViewModels
 {
@@ -42,6 +43,7 @@ namespace BillingManagement.UI.ViewModels
             InitValues();
             CreateAddCommand();
             CreateDelCommand();
+            CreateQuitCommand();
         }
 
 
@@ -111,28 +113,30 @@ namespace BillingManagement.UI.ViewModels
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-        private void customerDelete_Click(object sender, RoutedEventArgs e)
+        public ICommand QuitCommand
         {
-            int currentIndex = Customers.IndexOf(SelectedCustomer);
-
-            if (currentIndex > 0)
-                currentIndex--;
-
-            Customers.Remove(SelectedCustomer);
-
-         //  lvCustomers.SelectedIndex = currentIndex;
-
+            get;
+            internal set;
         }
+        
+        /*  private bool CanExecuteAddCommand()
+          {
+              return !string.IsNullOrEmpty(LastName);
+          }*/
+
+        private void CreateQuitCommand()
+        {
+           QuitCommand = new RelayCommand(QuitExecute);
+        }
+
+
+        public void QuitExecute()
+        {
+
+            Environment.Exit(0);
+            Application.Current.Shutdown();
+        }
+
+
     }
 }

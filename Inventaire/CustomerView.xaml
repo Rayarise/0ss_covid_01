@@ -18,7 +18,7 @@
                     <Separator/>
                     <MenuItem Header="_Nouveau client"   Command="{Binding Path=AddCommand}" />
                     <Separator/>
-                    <MenuItem Header="_Quitter"/>
+                    <MenuItem Header="_Quitter"  Command="{Binding Path=QuitCommand}"/>
                 </MenuItem>
                 <MenuItem Header="_Édition">
                     <MenuItem Header="Couper..."/>
@@ -33,6 +33,11 @@
 
                 <MenuItem Header="NouveauClient">
                     <MenuItem Header="Nouveau"  Command="{Binding Path=AddCommand}"/>
+                </MenuItem>
+
+
+                <MenuItem Header="Quitter" Command="{Binding Path=QuitCommand}">
+                  
                 </MenuItem>
             </Menu>
         </StackPanel>
